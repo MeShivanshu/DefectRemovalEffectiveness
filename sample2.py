@@ -134,7 +134,7 @@ For Inspection Phase, we use the following formula for finding Defect Removal Ef
         (Defects removed at current phase)/(Defects existing at phase entry + Defects injected during development of phase)
 
 However, for Testing phases we use the DUnn's Formula for finding DRE :
-        (Defects Removed at current phase)/(Defects removed at current phase + Defects removed at subsequent steps)
+       (Defects Removed at current phase)/(Defects removed at current phase + Defects removed at subsequent steps)
 ------------Phase 1 :   Requirements-----------
 Defect Entry Rate : {RequirementsEntry}
 Defect Injection Rate : {totalVerticalRequirements}
@@ -193,10 +193,65 @@ print(f"""if we increase number of defects originated in requirements by 50% ,
 then the new injected defects = 1.5 * original injected defects , or,
 Defects Injection Rate : {1.5*totalVerticalRequirements}
 """)
-newtotalVerticalRequirements = 1.5*totalVerticalRequirements
-newtotalHorizontalRequirements = 1.5*totalHorizontalRequirements
+#newtotalVerticalRequirements = 1.5*totalVerticalRequirements
+#newtotalHorizontalRequirements = 1.5*totalHorizontalRequirements
 
-RequirementsExit = newtotalVerticalRequirements - newtotalHorizontalRequirements
+
+
+
+##########CHANGING REQUIREMENTS
+
+
+json_object["Requirements"][0]["Requirements"]= 1.5*json_object["Requirements"][0]["Requirements"]
+
+print(json_object["Requirements"][0]["Requirements"])
+######## VErtical Deefcts
+totalVerticalRequirements = json_object["Requirements"][0]["Requirements"] + json_object["Requirements"][0]["Analysis"] + json_object["Requirements"][0]["Design"] + json_object["Requirements"][0]["Coding"] + json_object["Requirements"][0]["Unit Testing"] + json_object["Requirements"][0]["Integration Testing"] + json_object["Requirements"][0]["System Testing"] + json_object["Requirements"][0]["Field"]
+#print(totalVerticalRequirements)
+totalVerticalAnalysis = json_object["Analysis"][0]["Analysis"] + json_object["Analysis"][0]["Design"] + json_object["Analysis"][0]["Coding"] + json_object["Analysis"][0]["Unit Testing"] + json_object["Analysis"][0]["Integration Testing"] + json_object["Analysis"][0]["System Testing"] + json_object["Analysis"][0]["Field"]
+#print(totalVerticalAnalysis)
+totalVerticalDesign = json_object["Design"][0]["Analysis"] + json_object["Design"][0]["Design"] + json_object["Design"][0]["Coding"] + json_object["Design"][0]["Unit Testing"] + json_object["Design"][0]["Integration Testing"] + json_object["Design"][0]["System Testing"] + json_object["Design"][0]["Field"]
+#print(totalVerticalDesign)
+totalVerticalCoding = json_object["Coding"][0]["Analysis"] + json_object["Coding"][0]["Design"] + json_object["Coding"][0]["Coding"] + json_object["Coding"][0]["Unit Testing"] + json_object["Coding"][0]["Integration Testing"] + json_object["Coding"][0]["System Testing"] + json_object["Coding"][0]["Field"]
+#print(totalVerticalCoding)
+totalVerticalUnit = json_object["Unit Testing"][0]["Analysis"] + json_object["Unit Testing"][0]["Design"] + json_object["Unit Testing"][0]["Coding"] + json_object["Unit Testing"][0]["Unit Testing"] + json_object["Unit Testing"][0]["Integration Testing"] + json_object["Unit Testing"][0]["System Testing"] + json_object["Unit Testing"][0]["Field"]
+#print(totalVerticalUnit)
+totalVerticalIntegration = json_object["Integration Testing"][0]["Analysis"] + json_object["Integration Testing"][0]["Design"] + json_object["Integration Testing"][0]["Coding"] + json_object["Integration Testing"][0]["Unit Testing"] + json_object["Integration Testing"][0]["Integration Testing"] + json_object["Integration Testing"][0]["System Testing"] + json_object["Integration Testing"][0]["Field"]
+#print(totalVerticalIntegration)
+totalVerticalSystem = json_object["System Testing"][0]["Analysis"] + json_object["System Testing"][0]["Design"] + json_object["System Testing"][0]["Coding"] + json_object["System Testing"][0]["Unit Testing"] + json_object["System Testing"][0]["Integration Testing"] + json_object["System Testing"][0]["System Testing"] + json_object["System Testing"][0]["Field"]
+#print(totalVerticalSystem)
+totalVerticalField = json_object["Field"][0]["Analysis"] + json_object["Field"][0]["Design"] + json_object["Field"][0]["Coding"] + json_object["Field"][0]["Unit Testing"] + json_object["Field"][0]["Integration Testing"] + json_object["Field"][0]["System Testing"] + json_object["Field"][0]["Field"]
+#print(totalVerticalField)
+
+
+##### HORizontal Defectas
+totalHorizontalRequirements = json_object["Requirements"][0]["Requirements"] + json_object["Analysis"][0]["Requirements"] + json_object["Design"][0]["Requirements"] + json_object["Coding"][0]["Requirements"] + json_object["Unit Testing"][0]["Requirements"] + json_object["System Testing"][0]["Requirements"] + json_object["Integration Testing"][0]["Requirements"] + json_object["Field"][0]["Requirements"]
+#print(totalHorizontalRequirements)
+totalHorizontalAnalysis = json_object["Requirements"][0]["Analysis"] + json_object["Analysis"][0]["Analysis"] + json_object["Design"][0]["Analysis"] + json_object["Coding"][0]["Analysis"] + json_object["Unit Testing"][0]["Analysis"] + json_object["System Testing"][0]["Analysis"] + json_object["Integration Testing"][0]["Analysis"] + json_object["Field"][0]["Analysis"]
+#print(totalHorizontalAnalysis)
+totalHorizontalDesign = json_object["Requirements"][0]["Design"] + json_object["Analysis"][0]["Design"] + json_object["Design"][0]["Design"] + json_object["Coding"][0]["Design"] + json_object["Unit Testing"][0]["Design"] + json_object["System Testing"][0]["Design"] + json_object["Integration Testing"][0]["Design"] + json_object["Field"][0]["Design"]
+#print(totalHorizontalDesign)
+totalHorizontalCoding = json_object["Requirements"][0]["Coding"] + json_object["Analysis"][0]["Coding"] + json_object["Design"][0]["Coding"] + json_object["Coding"][0]["Coding"] + json_object["Unit Testing"][0]["Coding"] + json_object["System Testing"][0]["Coding"] + json_object["Integration Testing"][0]["Coding"] + json_object["Field"][0]["Coding"]
+#print(totalHorizontalCoding)
+totalHorizontalUnit = json_object["Requirements"][0]["Unit Testing"] + json_object["Analysis"][0]["Unit Testing"] + json_object["Design"][0]["Unit Testing"] + json_object["Coding"][0]["Unit Testing"] + json_object["Unit Testing"][0]["Unit Testing"] + json_object["System Testing"][0]["Unit Testing"] + json_object["Integration Testing"][0]["Unit Testing"] + json_object["Field"][0]["Unit Testing"]
+#print(totalHorizontalUnit)
+totalHorizontalIntegration = json_object["Requirements"][0]["Integration Testing"] + json_object["Analysis"][0]["Integration Testing"] + json_object["Design"][0]["Integration Testing"] + json_object["Coding"][0]["Integration Testing"] + json_object["Unit Testing"][0]["Integration Testing"] + json_object["System Testing"][0]["Integration Testing"] + json_object["Integration Testing"][0]["Integration Testing"] + json_object["Field"][0]["Integration Testing"]
+#print(totalHorizontalIntegration)
+totalHorizontalSystem = json_object["Requirements"][0]["System Testing"] + json_object["Analysis"][0]["System Testing"] + json_object["Design"][0]["System Testing"] + json_object["Coding"][0]["System Testing"] + json_object["Unit Testing"][0]["System Testing"] + json_object["System Testing"][0]["System Testing"] + json_object["Integration Testing"][0]["System Testing"] + json_object["Field"][0]["System Testing"]
+#print(totalHorizontalSystem)
+totalHorizontalField = json_object["Requirements"][0]["Field"] + json_object["Analysis"][0]["Field"] + json_object["Design"][0]["Field"] + json_object["Coding"][0]["Field"] + json_object["Unit Testing"][0]["Field"] + json_object["System Testing"][0]["Field"] + json_object["Integration Testing"][0]["Field"] + json_object["Field"][0]["Field"]
+#print(totalHorizontalField)
+
+
+############ TOTAL DEFECTS#####
+grandtotalVertical = totalVerticalRequirements + totalVerticalSystem + totalVerticalAnalysis + totalVerticalCoding + totalVerticalIntegration + totalVerticalDesign + totalVerticalUnit + totalVerticalField
+#print(grandtotalVertical)
+grandtotalHorizontal = totalHorizontalRequirements + totalHorizontalSystem + totalHorizontalAnalysis + totalHorizontalCoding + totalHorizontalIntegration + totalHorizontalDesign + totalHorizontalUnit + totalHorizontalField
+#print(grandtotalHorizontal)
+
+################ Finding Injection and Exit
+RequirementsEntry = 0
+RequirementsExit = totalVerticalRequirements - totalHorizontalRequirements
 #print("          ",RequirementsEntry,RequirementsExit)
 
 
@@ -268,7 +323,7 @@ For Inspection Phase, we use the following formula for finding Defect Removal Ef
         (Defects removed at current phase)/(Defects existing at phase entry + Defects injected during development of phase)
 
 However, for Testing phases we use the DUnn's Formula for finding DRE :
-        (Defects Removed at current phase)/(Defects removed at current phase + Defects removed at subsequent steps)
+       (Defects Removed at current phase)/(Defects removed at current phase + Defects removed at subsequent steps)
 ------------Phase 1 :   Requirements-----------
 Defect Entry Rate : {RequirementsEntry}
 Defect Injection Rate : {totalVerticalRequirements}
@@ -321,4 +376,3 @@ Defect Removal Rate : {totalHorizontalField}
 Effective Removal Effectiveness : {FieldDRE}
 Defects Exited : {FieldExit}
 """)
-
