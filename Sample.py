@@ -11,95 +11,95 @@ with open('defects.json', 'r') as openfile:
     json_object = json.load(openfile)
   
 #print(json_object)
-print(type(json_object))
+#print(type(json_object))
 #print("Requirements:",json_object["Field"])
 
 
 
 ######## VErtical Deefcts
 totalVerticalRequirements = json_object["Requirements"][0]["Requirements"] + json_object["Requirements"][0]["Analysis"] + json_object["Requirements"][0]["Design"] + json_object["Requirements"][0]["Coding"] + json_object["Requirements"][0]["Unit Testing"] + json_object["Requirements"][0]["Integration Testing"] + json_object["Requirements"][0]["System Testing"] + json_object["Requirements"][0]["Field"]
-print(totalVerticalRequirements)
+#print(totalVerticalRequirements)
 totalVerticalAnalysis = json_object["Analysis"][0]["Analysis"] + json_object["Analysis"][0]["Design"] + json_object["Analysis"][0]["Coding"] + json_object["Analysis"][0]["Unit Testing"] + json_object["Analysis"][0]["Integration Testing"] + json_object["Analysis"][0]["System Testing"] + json_object["Analysis"][0]["Field"]
-print(totalVerticalAnalysis)
+#print(totalVerticalAnalysis)
 totalVerticalDesign = json_object["Design"][0]["Analysis"] + json_object["Design"][0]["Design"] + json_object["Design"][0]["Coding"] + json_object["Design"][0]["Unit Testing"] + json_object["Design"][0]["Integration Testing"] + json_object["Design"][0]["System Testing"] + json_object["Design"][0]["Field"]
-print(totalVerticalDesign)
+#print(totalVerticalDesign)
 totalVerticalCoding = json_object["Coding"][0]["Analysis"] + json_object["Coding"][0]["Design"] + json_object["Coding"][0]["Coding"] + json_object["Coding"][0]["Unit Testing"] + json_object["Coding"][0]["Integration Testing"] + json_object["Coding"][0]["System Testing"] + json_object["Coding"][0]["Field"]
-print(totalVerticalCoding)
+#print(totalVerticalCoding)
 totalVerticalUnit = json_object["Unit Testing"][0]["Analysis"] + json_object["Unit Testing"][0]["Design"] + json_object["Unit Testing"][0]["Coding"] + json_object["Unit Testing"][0]["Unit Testing"] + json_object["Unit Testing"][0]["Integration Testing"] + json_object["Unit Testing"][0]["System Testing"] + json_object["Unit Testing"][0]["Field"]
-print(totalVerticalUnit)
+#print(totalVerticalUnit)
 totalVerticalIntegration = json_object["Integration Testing"][0]["Analysis"] + json_object["Integration Testing"][0]["Design"] + json_object["Integration Testing"][0]["Coding"] + json_object["Integration Testing"][0]["Unit Testing"] + json_object["Integration Testing"][0]["Integration Testing"] + json_object["Integration Testing"][0]["System Testing"] + json_object["Integration Testing"][0]["Field"]
-print(totalVerticalIntegration)
+#print(totalVerticalIntegration)
 totalVerticalSystem = json_object["System Testing"][0]["Analysis"] + json_object["System Testing"][0]["Design"] + json_object["System Testing"][0]["Coding"] + json_object["System Testing"][0]["Unit Testing"] + json_object["System Testing"][0]["Integration Testing"] + json_object["System Testing"][0]["System Testing"] + json_object["System Testing"][0]["Field"]
-print(totalVerticalSystem)
+#print(totalVerticalSystem)
 totalVerticalField = json_object["Field"][0]["Analysis"] + json_object["Field"][0]["Design"] + json_object["Field"][0]["Coding"] + json_object["Field"][0]["Unit Testing"] + json_object["Field"][0]["Integration Testing"] + json_object["Field"][0]["System Testing"] + json_object["Field"][0]["Field"]
-print(totalVerticalField)
+#print(totalVerticalField)
 
 
 ##### HORizontal Defectas
 totalHorizontalRequirements = json_object["Requirements"][0]["Requirements"] + json_object["Analysis"][0]["Requirements"] + json_object["Design"][0]["Requirements"] + json_object["Coding"][0]["Requirements"] + json_object["Unit Testing"][0]["Requirements"] + json_object["System Testing"][0]["Requirements"] + json_object["Integration Testing"][0]["Requirements"] + json_object["Field"][0]["Requirements"]
-print(totalHorizontalRequirements)
+#print(totalHorizontalRequirements)
 totalHorizontalAnalysis = json_object["Requirements"][0]["Analysis"] + json_object["Analysis"][0]["Analysis"] + json_object["Design"][0]["Analysis"] + json_object["Coding"][0]["Analysis"] + json_object["Unit Testing"][0]["Analysis"] + json_object["System Testing"][0]["Analysis"] + json_object["Integration Testing"][0]["Analysis"] + json_object["Field"][0]["Analysis"]
-print(totalHorizontalAnalysis)
+#print(totalHorizontalAnalysis)
 totalHorizontalDesign = json_object["Requirements"][0]["Design"] + json_object["Analysis"][0]["Design"] + json_object["Design"][0]["Design"] + json_object["Coding"][0]["Design"] + json_object["Unit Testing"][0]["Design"] + json_object["System Testing"][0]["Design"] + json_object["Integration Testing"][0]["Design"] + json_object["Field"][0]["Design"]
-print(totalHorizontalDesign)
+#print(totalHorizontalDesign)
 totalHorizontalCoding = json_object["Requirements"][0]["Coding"] + json_object["Analysis"][0]["Coding"] + json_object["Design"][0]["Coding"] + json_object["Coding"][0]["Coding"] + json_object["Unit Testing"][0]["Coding"] + json_object["System Testing"][0]["Coding"] + json_object["Integration Testing"][0]["Coding"] + json_object["Field"][0]["Coding"]
-print(totalHorizontalCoding)
+#print(totalHorizontalCoding)
 totalHorizontalUnit = json_object["Requirements"][0]["Unit Testing"] + json_object["Analysis"][0]["Unit Testing"] + json_object["Design"][0]["Unit Testing"] + json_object["Coding"][0]["Unit Testing"] + json_object["Unit Testing"][0]["Unit Testing"] + json_object["System Testing"][0]["Unit Testing"] + json_object["Integration Testing"][0]["Unit Testing"] + json_object["Field"][0]["Unit Testing"]
-print(totalHorizontalUnit)
+#print(totalHorizontalUnit)
 totalHorizontalIntegration = json_object["Requirements"][0]["Integration Testing"] + json_object["Analysis"][0]["Integration Testing"] + json_object["Design"][0]["Integration Testing"] + json_object["Coding"][0]["Integration Testing"] + json_object["Unit Testing"][0]["Integration Testing"] + json_object["System Testing"][0]["Integration Testing"] + json_object["Integration Testing"][0]["Integration Testing"] + json_object["Field"][0]["Integration Testing"]
-print(totalHorizontalIntegration)
+#print(totalHorizontalIntegration)
 totalHorizontalSystem = json_object["Requirements"][0]["System Testing"] + json_object["Analysis"][0]["System Testing"] + json_object["Design"][0]["System Testing"] + json_object["Coding"][0]["System Testing"] + json_object["Unit Testing"][0]["System Testing"] + json_object["System Testing"][0]["System Testing"] + json_object["Integration Testing"][0]["System Testing"] + json_object["Field"][0]["System Testing"]
-print(totalHorizontalSystem)
+#print(totalHorizontalSystem)
 totalHorizontalField = json_object["Requirements"][0]["Field"] + json_object["Analysis"][0]["Field"] + json_object["Design"][0]["Field"] + json_object["Coding"][0]["Field"] + json_object["Unit Testing"][0]["Field"] + json_object["System Testing"][0]["Field"] + json_object["Integration Testing"][0]["Field"] + json_object["Field"][0]["Field"]
-print(totalHorizontalField)
+#print(totalHorizontalField)
 
 
 ############ TOTAL DEFECTS#####
 grandtotalVertical = totalVerticalRequirements + totalVerticalSystem + totalVerticalAnalysis + totalVerticalCoding + totalVerticalIntegration + totalVerticalDesign + totalVerticalUnit + totalVerticalField
-print(grandtotalVertical)
+#print(grandtotalVertical)
 grandtotalHorizontal = totalHorizontalRequirements + totalHorizontalSystem + totalHorizontalAnalysis + totalHorizontalCoding + totalHorizontalIntegration + totalHorizontalDesign + totalHorizontalUnit + totalHorizontalField
-print(grandtotalHorizontal)
+#print(grandtotalHorizontal)
 
 ################ Finding Injection and Exit
 RequirementsEntry = 0
 RequirementsExit = totalVerticalRequirements - totalHorizontalRequirements
-print("          ",RequirementsEntry,RequirementsExit)
+#print("          ",RequirementsEntry,RequirementsExit)
 
 
 AnalysisEntry = RequirementsExit
 AnalysisExit = AnalysisEntry + totalVerticalAnalysis - totalHorizontalAnalysis 
-print(AnalysisExit)
+#print(AnalysisExit)
 
 
 DesignEntry = AnalysisExit
 DesignExit = DesignEntry + totalVerticalDesign - totalHorizontalDesign
-print(DesignExit)
+#print(DesignExit)
 
 
 CodingEntry = DesignExit
 CodingExit = CodingEntry + totalVerticalCoding - totalHorizontalCoding
-print(CodingExit)
+#print(CodingExit)
 
 
 UnitEntry = CodingExit
 UnitExit =  UnitEntry + totalVerticalUnit - totalHorizontalUnit
-print(UnitExit)
+#print(UnitExit)
 
 
 IntEntry = UnitExit
 IntExit = IntEntry + totalVerticalIntegration - totalHorizontalIntegration
-print(IntExit)
+#print(IntExit)
 
 
 
 SystemEntry = IntExit
 SystemExit =  SystemEntry + totalVerticalSystem - totalHorizontalSystem
-print(SystemExit)
+#print(SystemExit)
 
 
 FieldEntry = SystemExit
 FieldExit = FieldEntry + totalVerticalField - totalHorizontalField
-print(FieldExit)
+#print(FieldExit)
 
 ##########  Defect Removal Effectiveness
 
@@ -130,10 +130,10 @@ FieldDRE2 = (totalHorizontalField)/(totalHorizontalField)*100
 print("PHASE-WISE DETAILS OF DEFECTS:")
 print(f"""
 
-For Inspection Phase, we use the formula :
+For Inspection Phase, we use the following formula for finding Defect Removal Effectiveness :
         (Defects removed at current phase)/(Defects existing at phase entry + Defects injected during development of phase)
 
-However, for Testing phases we use the DUnn's Formula :
+However, for Testing phases we use the DUnn's Formula for finding DRE :
         (Defects Removed at current phase)/(Defects removed at current phase + Defects removed at subsequent steps)
 ------------Phase 1 :   Requirements-----------
 Defect Entry Rate : {RequirementsEntry}
